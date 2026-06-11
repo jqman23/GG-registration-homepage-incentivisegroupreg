@@ -320,11 +320,6 @@ html, body {
 <body>
 <div id="ggGroupNudge">
 
-  <!-- GOOD DECISION STATE -->
-  <div id="gnGoodDecision" style="display:none; padding: 10px 0; font-size: 1.05rem; font-weight: 600; color: #111;">
-    Good decision.
-  </div>
-
   <!-- MAIN STRIP -->
   <div id="gnMain">
 
@@ -440,25 +435,6 @@ html, body {
 
   slider.addEventListener('input', update);
   update();
-
-  // ── Answer listener ─────────────────────────────────
-  const gnGoodDecision = document.getElementById('gnGoodDecision');
-  const gnMain         = document.getElementById('gnMain');
-  const gnFormViewEl   = document.getElementById('gnFormView');
-
-  window.addEventListener('message', function(e) {
-    if (!e.data || !('ggGroupAnswer' in e.data)) return;
-    const answer = (e.data.ggGroupAnswer || '').toLowerCase();
-    if (answer === 'yes') {
-      gnMain.style.display         = 'none';
-      gnFormViewEl.style.display   = 'none';
-      gnGoodDecision.style.display = 'block';
-    } else {
-      gnGoodDecision.style.display = 'none';
-      gnMain.style.display         = 'flex';
-    }
-    reportHeight();
-  });
 
   // ── Height reporting for iframe ──────────────────────
   function reportHeight() {
