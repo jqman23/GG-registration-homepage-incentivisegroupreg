@@ -377,6 +377,31 @@ html, body {
 
 <script>
 (function () {
+  // ── Click tracking (once per session) ───────────────
+  const SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+  const TRACK_KEY  = 'ggNudgeTracked';
+
+  async function trackClick() {
+    if (sessionStorage.getItem(TRACK_KEY)) return;
+    sessionStorage.setItem(TRACK_KEY, '1');
+
+    try {
+      // Get visitor IP + geo client-side so the sheet gets real location data
+      const geo = await fetch('https://ipapi.co/json/').then(r => r.json());
+      const params = new URLSearchParams({
+        sheet:   '2026Registration',
+        button:  'RegHomePageGroupRegIncentivise',
+        ip:      geo.ip            || '',
+        country: geo.country_name  || '',
+        state:   geo.region        || '',
+        city:    geo.city          || ''
+      });
+      fetch(SCRIPT_URL + '?' + params.toString(), { mode: 'no-cors' });
+    } catch (_) {}
+  }
+
+  document.getElementById('ggGroupNudge').addEventListener('click', trackClick, { once: true });
+
   const INDIV = 175;
 
   function groupRate(n) {
