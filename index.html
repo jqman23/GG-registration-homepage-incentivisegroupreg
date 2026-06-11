@@ -19,14 +19,9 @@ html, body {
   overflow: hidden;
 }
 
-/* ─── WIDGET SHELL ─── */
 #ggGroupNudge {
   width: 100%;
   background: #fff;
-  border: 1.5px solid rgba(0,40,85,.12);
-  border-left: 4px solid #002855;
-  border-radius: 12px;
-  overflow: hidden;
 }
 
 /* ─── MAIN STRIP ─── */
@@ -34,7 +29,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 12px 16px;
+  padding: 10px 0;
 }
 
 .gnLabel {
@@ -108,7 +103,6 @@ html, body {
 
 #gnSlider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  appearance: none;
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -126,7 +120,6 @@ html, body {
   border: 2.5px solid #002855;
   box-shadow: 0 2px 6px rgba(0,40,85,.22);
   cursor: pointer;
-  border: none;
 }
 
 .gnSliderEnd {
@@ -141,26 +134,26 @@ html, body {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding-left: 2px;
+  flex-wrap: wrap;
 }
 
 .gnResultStrike {
   font-size: .68rem;
   font-weight: 600;
-  color: rgba(0,40,85,.3);
+  color: rgba(0,40,85,.35);
   text-decoration: line-through;
   white-space: nowrap;
 }
 
 .gnResultMeta {
-  font-size: .6rem;
+  font-size: .63rem;
   font-weight: 500;
-  color: rgba(0,40,85,.32);
+  color: rgba(0,40,85,.35);
   white-space: nowrap;
 }
 
 .gnArrow {
-  font-size: .78rem;
+  font-size: .75rem;
   color: rgba(0,40,85,.22);
   flex-shrink: 0;
 }
@@ -173,13 +166,10 @@ html, body {
 }
 
 .gnSavings {
-  font-size: .65rem;
+  font-size: .63rem;
   font-weight: 700;
-  color: rgba(0,40,85,.55);
+  color: rgba(0,40,85,.5);
   white-space: nowrap;
-  background: rgba(0,40,85,.07);
-  padding: 2px 8px;
-  border-radius: 999px;
 }
 
 /* ─── CONTACT BUTTON ─── */
@@ -188,15 +178,13 @@ html, body {
   border: 1.5px solid rgba(0,40,85,.2);
   background: #fff;
   color: #002855;
-  padding: 8px 14px;
+  padding: 7px 14px;
   border-radius: 999px;
   font-size: .73rem;
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
   transition: background .18s ease, border-color .18s ease, box-shadow .18s ease;
-  line-height: 1.3;
-  text-align: center;
 }
 
 .gnContactBtn:hover {
@@ -210,12 +198,12 @@ html, body {
 #gnFormView {
   display: none;
   border-top: 1px solid rgba(0,40,85,.08);
-  padding: 12px 16px 14px;
+  padding: 10px 0 12px;
   animation: gnFadeIn .2s ease;
 }
 
 @keyframes gnFadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
+  from { opacity: 0; transform: translateY(-3px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -223,11 +211,11 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 9px;
+  margin-bottom: 8px;
 }
 
 .gnFormTitle {
-  font-size: .78rem;
+  font-size: .76rem;
   font-weight: 700;
   color: #002855;
 }
@@ -236,10 +224,10 @@ html, body {
   border: none;
   background: none;
   color: rgba(0,40,85,.35);
-  font-size: .82rem;
+  font-size: .8rem;
   cursor: pointer;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -263,7 +251,7 @@ html, body {
 
 .gnFormFields input,
 .gnFormFields textarea {
-  font-size: .78rem;
+  font-size: .77rem;
   font-weight: 500;
   color: #002855;
   border: 1.5px solid rgba(0,40,85,.14);
@@ -302,7 +290,7 @@ html, body {
   color: #fff;
   padding: 0 18px;
   border-radius: 999px;
-  font-size: .78rem;
+  font-size: .77rem;
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
@@ -323,10 +311,10 @@ html, body {
 /* ─── SUCCESS ─── */
 #gnSuccess {
   display: none;
-  font-size: .76rem;
+  font-size: .74rem;
   font-weight: 600;
-  color: rgba(0,40,85,.6);
-  padding: 4px 0 0;
+  color: rgba(0,40,85,.55);
+  padding: 5px 0 0;
   text-align: left;
   animation: gnFadeIn .25s ease;
 }
@@ -335,7 +323,7 @@ html, body {
 @media (max-width: 580px) {
   #gnMain { flex-wrap: wrap; gap: 10px; }
   .gnLabel { flex: 0 0 100%; }
-  .gnContactBtn { width: 100%; justify-content: center; }
+  .gnContactBtn { width: 100%; text-align: center; }
 }
 </style>
 </head>
@@ -346,9 +334,9 @@ html, body {
   <div id="gnMain">
 
     <div class="gnLabel">
-      <div class="gnTag">Group Savings</div>
-      <div class="gnHeadline">10+ attendees = up to 49% off</div>
-      <div class="gnSub">$175 individual · rates drop with group size</div>
+      <div class="gnTag">Special 10+ Group Discounts</div>
+      <div class="gnHeadline">14–49% off per registrant</div>
+      <div class="gnSub">Register a group to access special group rates</div>
     </div>
 
     <div class="gnSliderZone">
@@ -359,16 +347,14 @@ html, body {
       </div>
       <div class="gnResultRow">
         <span class="gnResultStrike" id="gnIndivTotal">$1,750</span>
-        <span class="gnResultMeta">individually</span>
+        <span class="gnResultMeta">without group discount</span>
         <span class="gnArrow">→</span>
-        <span class="gnResultGroup" id="gnGroupTotal">$1,500 as a group</span>
-        <span class="gnSavings" id="gnSavings">save $250</span>
+        <span class="gnResultGroup" id="gnGroupTotal">$1,500 total for group</span>
+        <span class="gnSavings" id="gnSavings">save $250 (14%)</span>
       </div>
     </div>
 
-    <button class="gnContactBtn" id="gnContactBtn">
-      Send a message to the<br>Global Gathering team
-    </button>
+    <button class="gnContactBtn" id="gnContactBtn">Questions? Let us know.</button>
 
   </div>
 
@@ -407,11 +393,11 @@ html, body {
     return '$' + n.toLocaleString('en-US');
   }
 
-  const slider      = document.getElementById('gnSlider');
-  const peoplePill  = document.getElementById('gnPeoplePill');
-  const indivEl     = document.getElementById('gnIndivTotal');
-  const groupEl     = document.getElementById('gnGroupTotal');
-  const savingsEl   = document.getElementById('gnSavings');
+  const slider     = document.getElementById('gnSlider');
+  const peoplePill = document.getElementById('gnPeoplePill');
+  const indivEl    = document.getElementById('gnIndivTotal');
+  const groupEl    = document.getElementById('gnGroupTotal');
+  const savingsEl  = document.getElementById('gnSavings');
 
   function update() {
     const n    = +slider.value;
@@ -419,11 +405,12 @@ html, body {
     const ind  = n * INDIV;
     const grp  = n * rate;
     const save = ind - grp;
+    const pct  = Math.round((save / ind) * 100);
 
     peoplePill.textContent = n + ' people';
     indivEl.textContent    = fmt(ind);
-    groupEl.textContent    = fmt(grp) + ' as a group';
-    savingsEl.textContent  = 'save ' + fmt(save);
+    groupEl.textContent    = fmt(grp) + ' total for group';
+    savingsEl.textContent  = 'save ' + fmt(save) + ' (' + pct + '%)';
   }
 
   slider.addEventListener('input', update);
@@ -440,7 +427,7 @@ html, body {
   }
   window.addEventListener('load', reportHeight);
 
-  // ── Contact form toggle ──────────────────────────────
+  // ── Form toggle ──────────────────────────────────────
   const contactBtn = document.getElementById('gnContactBtn');
   const formView   = document.getElementById('gnFormView');
   const closeBtn   = document.getElementById('gnClose');
@@ -495,10 +482,10 @@ html, body {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
-          name:     nameEl.value.trim(),
-          email:    emailEl.value.trim(),
-          message:  msgEl.value.trim(),
-          _subject: 'Group Registration Question — Global Gathering',
+          name:      nameEl.value.trim(),
+          email:     emailEl.value.trim(),
+          message:   msgEl.value.trim(),
+          _subject:  'Group Registration Question — Global Gathering',
           _template: 'box'
         })
       });
