@@ -325,7 +325,7 @@ html, body {
 
     <div class="gnLabel">
       <div class="gnTag">Explore Pricing for<br>Group Registrations</div>
-      <div class="gnHeadline">14–49% off per registrant</div>
+      <div class="gnHeadline">14–49% group savings + 10% early bird</div>
     </div>
 
     <div class="gnSliderZone">
@@ -338,8 +338,8 @@ html, body {
         <span class="gnResultStrike" id="gnIndivTotal">$1,750</span>
         <span class="gnResultMeta">without group discount</span>
         <span class="gnArrow">→</span>
-        <span class="gnResultGroup" id="gnGroupTotal">$1,500 total for group</span>
-        <span class="gnSavings" id="gnSavings">save $250 (14%)</span>
+        <span class="gnResultGroup" id="gnGroupTotal">$1,350 total for group</span>
+        <span class="gnSavings" id="gnSavings">save $400 (23%)</span>
       </div>
     </div>
 
@@ -401,6 +401,8 @@ html, body {
 
   const INDIV = 175;
 
+  const EARLY_BIRD = 0.90;
+
   function groupRate(n) {
     if (n >= 50) return 90;
     if (n >= 40) return 105;
@@ -423,7 +425,7 @@ html, body {
     const n    = +slider.value;
     const rate = groupRate(n);
     const ind  = n * INDIV;
-    const grp  = n * rate;
+    const grp = Math.round(n * rate * EARLY_BIRD);
     const save = ind - grp;
     const pct  = Math.round((save / ind) * 100);
 
