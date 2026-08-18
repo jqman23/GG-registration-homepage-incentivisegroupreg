@@ -401,8 +401,6 @@ html, body {
 
   const INDIV = 175;
 
-  const EARLY_BIRD = 0.90;
-
   function groupRate(n) {
     if (n >= 50) return 90;
     if (n >= 40) return 105;
@@ -425,7 +423,7 @@ html, body {
     const n    = +slider.value;
     const rate = groupRate(n);
     const ind  = n * INDIV;
-    const grp = Math.round(n * rate * EARLY_BIRD);
+    const grp = n * rate;
     const save = ind - grp;
     const pct  = Math.round((save / ind) * 100);
 
